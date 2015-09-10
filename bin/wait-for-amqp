@@ -1,0 +1,26 @@
+#!/usr/bin/env node
+
+var waitForAmqp = require('../');
+
+var host = process.argv[2] || process.env.AMQP_HOST;
+var port = process.argv[3] || process.env.AMQP_PORT;
+var login = process.argv[4] || process.env.AMQP_LOGIN;
+var password = process.argv[5] || process.env.AMQP_PASSWORD;
+var connectionTimeout = process.argv[6] || process.env.AMQP_CONNECTION_TIMEOUT;
+
+var options = {
+  host: host,
+  port: port,
+  login: login,
+  password: password,
+  connectionTimeout: +connectionTimeout
+};
+
+waitForAmqp(options, function(err) {
+  if(err) {
+    throw err;
+  } else {
+    console.log('connected');
+    process.exit(0);
+  }
+});

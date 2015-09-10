@@ -1,0 +1,17 @@
+{
+  "name": "wait-for-amqp",
+  "version": "0.0.2",
+  "description": "Simple utility which waits until amqp to come online",
+  "dependencies": {
+    "amqp": "0.2.4"
+  },
+  "main": "./lib/waitForAmqp.js",
+  "bin": {
+    "wait-for-amqp": "./bin/wait-for-amqp"
+  },
+  "author": "Radik Fattakhov <radikft@gmail.com>",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/radik/wait-for-amqp.git"
+  }
+}
