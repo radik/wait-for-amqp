@@ -1,6 +1,6 @@
 {
   "name": "wait-for-amqp",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Simple utility which waits until amqp to come online",
   "dependencies": {
     "amqp": "0.2.4"

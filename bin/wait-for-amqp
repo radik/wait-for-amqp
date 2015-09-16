@@ -6,9 +6,14 @@ var host = process.argv[2] || process.env.AMQP_HOST;
 var port = process.argv[3] || process.env.AMQP_PORT;
 var login = process.argv[4] || process.env.AMQP_LOGIN;
 var password = process.argv[5] || process.env.AMQP_PASSWORD;
-var connectionTimeout = process.argv[6] || process.env.AMQP_CONNECTION_TIMEOUT;
+var connectionTimeout = process.argv[6] || process.env.AMQP_CONNECTION_TIMEOUT || 10000;
+var options;
 
-var options = {
+if (host && host[0] === '{') {
+  options = JSON.parse(host);
+}
+
+options = options || {
   host: host,
   port: port,
   login: login,
